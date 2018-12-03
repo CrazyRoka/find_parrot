@@ -1,0 +1,9 @@
+.shape {
+    background-image: url('../../assets/images/Shape\ 1.png');
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 3px;
+    height: 55px;
+    margin-left: -5px;
+    margin-right: 45px;
+}
