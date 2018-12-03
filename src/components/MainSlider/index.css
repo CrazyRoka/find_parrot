@@ -1,0 +1,21 @@
+.main-slider {
+    margin-top: 245px;
+    text-align: center;
+}
+
+.big-title {
+    font-size: 55px;
+    line-height: 55px;
+    color: #484848;
+    font-family: "Raleway";
+    font-weight: bold;
+}
+
+.small-title {
+    font-size: 18px;
+    line-height: 18px;
+    color: #484848;
+    font-family: "Raleway";
+    font-weight: 300;
+    margin-top: 30px;
+}
