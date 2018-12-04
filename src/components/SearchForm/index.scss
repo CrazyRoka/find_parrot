@@ -1,0 +1,54 @@
+.search-form {
+    width: 998px;
+    height: 75px;
+    border-radius: 10px;
+    box-shadow: 2.828px 2.828px 3px rgba(44,46,47,0.13);
+    background-color: #ffffff;
+    margin-top: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+
+    .select {
+        font-size: 16px;
+        line-height: 30px;
+        color: #484848;
+        font-family: "Raleway";
+        background-color: inherit;
+        border: none;
+        margin-right: 35px;
+        margin-left: 45px;
+    }
+
+    .shape {
+        display: inline-block;
+        height: 100%;
+        width: 1px;
+        background-color: #b5b7ba;
+    }
+
+    .input {
+        width: 63.5%;
+        height: 80%;
+        font-size: 16px;
+        line-height: 30px;
+        color: #484848;
+        font-family: "Raleway";
+        background-color: inherit;
+        border: none;
+    }
+
+    .search-button {
+        width: 20%;
+        font-size: 16px;
+        line-height: 30px;
+        color: #ffffff;
+        font-family: "Raleway";
+        font-weight: bold;
+        background-color: #4dadbb;
+        border: none;
+        height: 100%;
+    }
+}

@@ -1,16 +1,15 @@
 import * as React from 'react';
-import './index.css';
-import Select from '../Select';
-import Input from '../Input';
-import Shape from '../Shape';
-import SearchButton from '../SearchButton';
+import './index.scss';
 
 const SearchForm = () =>
     <form className="search-form">
-        <Select />
-        <Shape />
-        <Input />
-        <SearchButton />
+        <select className="select">
+            <option value="category">Category</option>
+            <option value="name">Name</option>
+        </select>
+        <div className="shape" />
+        <input className="input" />
+        <button className="search-button">START SEARCHING</button>
     </form>
 
 export default SearchForm;
