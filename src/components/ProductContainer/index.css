@@ -1,0 +1,27 @@
+.product-container {
+    width: 350px;
+    height: 325px;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.image-wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 250px;
+}
+
+.image-wrapper > img {
+    object-fit: cover;
+    object-position: 50% 10%;
+    width: 100%;
+    height: 100%;
+}
+
+.product-container > * + * {
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 16px;
+    color: #8b8b8b;
+    font-family: "Raleway";
+}
