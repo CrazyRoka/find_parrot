@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './index.css'
+import SearchForm from '../SearchForm';
 
 const MainSlider = () =>
     <div className="main-slider">
@@ -9,6 +10,7 @@ const MainSlider = () =>
         <div className="small-title">
             INNOVATE • LIST • CONNECT
         </div>
+        <SearchForm />
     </div>
 
 export default MainSlider;

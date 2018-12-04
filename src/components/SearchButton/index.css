@@ -1,0 +1,11 @@
+.search-button {
+    width: 20%;
+    font-size: 16px;
+    line-height: 30px;
+    color: #ffffff;
+    font-family: "Raleway";
+    font-weight: bold;
+    background-color: #4dadbb;
+    border: none;
+    height: 100%;
+}

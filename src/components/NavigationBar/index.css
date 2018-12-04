@@ -6,9 +6,8 @@
     align-items: center;
     justify-content: center;
     flex-direction:row;
+}
 
-    font-size: 16px;
-    line-height: 30px;
-    color: #000000;
-    font-family: "Raleway";
+.navigation-bar > * + * {
+    margin-left: 55px;
 }
