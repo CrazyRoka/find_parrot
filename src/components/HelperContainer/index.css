@@ -1,0 +1,9 @@
+.helper-container {
+    width: 430px;
+    height: 100%;
+    display: flex;
+}
+
+.helper-container > * + * {
+    margin-left: 30px;
+}
