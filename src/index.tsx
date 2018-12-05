@@ -6,14 +6,14 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './index.css';
-import Home from './landings/Home';
+import HomeContainer from './containers/landings/Home';
 
 const store = createStore(reducers);
 
 ReactDOM.render(
     <Provider store={store}>
         <Router>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={HomeContainer} />
         </Router>
     </Provider>,
     document.getElementById('root')
