@@ -1,12 +1,6 @@
 import * as React from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
-import product1 from '../../../../assets/images/product1.png';
-import product2 from '../../../../assets/images/product2.png';
-import product3 from '../../../../assets/images/product3.png';
-import product4 from '../../../../assets/images/product4.png';
-import product5 from '../../../../assets/images/product5.png';
-import product6 from '../../../../assets/images/product6.png';
 import clickCategory from '../../../../assets/images/clickCategory.png';
 import clickHand from '../../../../assets/images/clickHand.png';
 import Header from '../../../../components/Header';
@@ -14,6 +8,7 @@ import SearchForm from '../../../../components/SearchForm';
 import ProductContainer from '../../../../components/ProductContainer';
 import Footer from '../../../../components/Footer';
 import { Product } from '../../../../dataTypes';
+import { ClipLoader } from 'react-spinners';
 
 export interface Props {
     products?: Array<Product>;
@@ -60,7 +55,8 @@ const Home = ({ products } : Props) =>
                 </div>
                 <Link to={'/'} className="all-products">All products</Link>
             </div> :
-            <div className="products-section">
+            <div className="products-section" style={{ justifyContent: 'center' }}>
+                <ClipLoader sizeUnit={"px"} size={150} color={'#123abc'} loading={true} />
             </div>
         }
         <Footer />
