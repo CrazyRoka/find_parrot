@@ -1,9 +1,15 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './index.scss';
+import { ABOUT_URL } from '../../constants';
 
 export interface State {
     isVisible: boolean;
+    isFixed: boolean;
+}
+
+export interface Props {
+    isFixed: boolean;
 }
 
 const style = {
@@ -13,8 +19,20 @@ const style = {
     height: '80px'
 };
 
-class Header extends React.PureComponent {
-    state : State = { isVisible: false };
+class Header extends React.PureComponent<Props, State> {
+    static defaultProps = {
+        isFixed: false
+    };
+
+    constructor( props : Props) {
+        super(props);
+        
+        const { isFixed } = props;
+        this.state = {
+            isVisible: isFixed || window.scrollY !== 0,
+            isFixed
+        };
+    }
 
     handleScroll = () => {
         const { isVisible } = this.state;
@@ -24,11 +42,13 @@ class Header extends React.PureComponent {
     }
 
     componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll);
+        if(!this.state.isFixed)
+            window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
+        if(!this.state.isFixed)
+            window.removeEventListener('scroll', this.handleScroll);
     }
 
     render() {
@@ -39,7 +59,7 @@ class Header extends React.PureComponent {
                 <Link to={'/'} className="main-logo" />
                 <div className="navigation-bar">
                     <Link to={'/'} className="link">ALL PRODUCTS</Link>
-                    <Link to={'/'} className="link">ABOUT US</Link>
+                    <Link to={ABOUT_URL} className="link">ABOUT US</Link>
                     <Link to={'/'} className="link">LOG IN</Link>
                     <div className="shape" />
                     <Link to={'/'} className="link">SIGN UP</Link>

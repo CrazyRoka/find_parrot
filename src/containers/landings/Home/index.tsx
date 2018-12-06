@@ -4,7 +4,6 @@ import { Dispatch } from 'redux';
 import { addProduct } from '../../../actions';
 import { ProductStore, Product } from '../../../dataTypes';
 import { connect } from 'react-redux';
-import products from '../../../reducers';
 
 export interface Props {
     products: Array<Product>;
