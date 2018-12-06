@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink as Link } from 'react-router-dom';
 import './index.scss';
 import { ABOUT_URL } from '../../constants';
 
@@ -58,11 +58,11 @@ class Header extends React.PureComponent<Props, State> {
             <div className="main-header" style={ isVisible ? style : {}}>
                 <Link to={'/'} className="main-logo" />
                 <div className="navigation-bar">
-                    <Link to={'/'} className="link">ALL PRODUCTS</Link>
-                    <Link to={ABOUT_URL} className="link">ABOUT US</Link>
-                    <Link to={'/'} className="link">LOG IN</Link>
+                    <Link exact to={'/'} className="link" activeClassName="selected">ALL PRODUCTS</Link>
+                    <Link to={ABOUT_URL} className="link" activeClassName="selected">ABOUT US</Link>
+                    <Link exact to={'/'} className="link" activeClassName="selected">LOG IN</Link>
                     <div className="shape" />
-                    <Link to={'/'} className="link">SIGN UP</Link>
+                    <Link exact to={'/'} className="link" activeClassName="selected">SIGN UP</Link>
                 </div>
             </div>
         );
