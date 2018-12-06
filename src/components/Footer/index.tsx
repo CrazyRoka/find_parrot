@@ -2,7 +2,7 @@ import * as React from 'react';
 import './index.scss';
 import logo from '../../assets/images/footer_logo.png';
 import { Link } from 'react-router-dom';
-import { ABOUT_URL } from '../../constants';
+import { ABOUT_URL, CONTACT_US_URL } from '../../constants';
 
 const Footer = () =>
     <div className="footer">
@@ -14,7 +14,7 @@ const Footer = () =>
                 <Link to={ABOUT_URL} className="footer-link">ABOUT US</Link>
                 <Link to='/' className="footer-link">TERMS OF SERVICE</Link>
                 <Link to='/' className="footer-link">PRIVACY POLICY</Link>
-                <Link to='/' className="footer-link">CONTACT US</Link>
+                <Link to={CONTACT_US_URL} className="footer-link">CONTACT US</Link>
             </div>
         </div>
         <div className="bottom-part">

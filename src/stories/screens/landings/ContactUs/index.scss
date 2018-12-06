@@ -1,0 +1,112 @@
+.contact-us {
+    max-width: 100vw;
+
+    .contact-section {
+        background-image: url('../../../../assets/images/ContactUsBackground.jpg');
+        overflow-y: hidden ! important;
+        overflow-x: hidden ! important;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 835px;
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 1000px;
+            width: 90%;
+            margin: 0 auto;
+            align-items: center;
+
+            .title {
+                margin-top: 180px;
+                font-size: 35px;
+                color: #181717;
+                font-family: "Raleway";
+                font-weight: bold;
+            }
+
+            .small-title {
+                font-size: 16px;
+                color: #181717;
+                font-family: "Raleway";
+                margin-top: 15px;
+            }
+
+            button {
+                font-size: 22px;
+                letter-spacing: 1px;
+                line-height: 30px;
+                color: #ffffff;
+                font-family: "Segoe UI";
+                font-weight: bold;
+
+                width: 220px;
+                height: 52px;
+                margin-top: 35px;
+                background-color: #4dadbb;
+                border: none;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    margin-right: 5px;
+                }
+            }
+
+            .contact-form {
+                width: 100%;
+
+                .email-name {
+                    display: grid;
+                    grid-template-columns:  repeat(2, 1fr);
+                    grid-column-gap: 15%;
+                    margin-top: 50px;
+
+                    input {
+                        width: 100%;
+                        height: 40px;
+                        border: none;
+                        background: none;
+                        color: #181717;
+                        font-family: "Raleway";
+                        font-size: 16px;
+                        border-bottom: 1px solid #808080;
+                        padding-left: 5px;
+
+                        ::placeholder {
+                            color: #979b9d;
+                            font-family: "Raleway";
+                        }
+                    }
+                }
+
+                .contact-message {
+                    height: 95px;
+                    width: 100%;
+                    margin-top: 35px;
+                    background: none;
+                    border: 1px solid #626262;
+                    padding: 10px;
+                    font-size: 16px;
+                    font-family: "Raleway";
+                    resize: none;
+
+                    ::placeholder {
+                        color: #979b9d;
+                    }
+                }
+
+                .submit {
+                    width: 170px;
+                    height: 60px;
+                    border-radius: 30px;
+                    background-color: #4dadbb;
+                    float: right;
+                }
+            }
+        }
+    }
+}
