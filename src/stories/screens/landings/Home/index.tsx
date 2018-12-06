@@ -16,8 +16,8 @@ export interface Props {
 
 const Home = ({ products } : Props) => 
     <div className="home">
+        <Header />
         <div className="top-section">
-            <Header />
             <div className="home-slider">
                 <div className="big-title">
                     Quick Search for Your <span style={{ color: "#0E7200" }}>Perfect Product</span>
