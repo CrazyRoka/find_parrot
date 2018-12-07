@@ -4,4 +4,4 @@ import About from '../../../stories/screens/landings/About';
 const AboutContainer = () =>
     <About />
 
-export default About;
+export default AboutContainer;
