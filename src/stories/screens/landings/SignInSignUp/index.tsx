@@ -4,6 +4,7 @@ import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import Field from '../../../../components/Field';
 import SubmitButton from '../../../../components/SubmitButton';
+import SignUpForm from '../../../../components/SignUp';
 
 const SignInSignUp = () =>
     <div className="sign-page">
@@ -18,13 +19,7 @@ const SignInSignUp = () =>
                 </form>
             </div>
             <div className="sign-up-container">
-                <form className="sign-up-form">
-                    <div className="title">Are you new user?</div>
-                    <Field type="email" placeholder="Email Address" />
-                    <Field type="password" placeholder="Password" />
-                    <Field type="password" placeholder="Confirm Password" />
-                    <SubmitButton text="SIGN UP"/>
-                </form>
+                <SignUpForm />
             </div>
         </div>
         <Footer />

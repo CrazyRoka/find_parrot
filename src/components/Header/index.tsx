@@ -15,8 +15,9 @@ export interface Props {
 const style = {
     boxShadow: '0 0 6px rgba(0,0,2,0.16)',
     background: '#f7f7f7',
-    paddingTop: '0px',
-    height: '80px'
+    paddingTop: '5px',
+    paddingBottom: '5px',
+    height: '90px'
 };
 
 class Header extends React.PureComponent<Props, State> {
@@ -53,9 +54,9 @@ class Header extends React.PureComponent<Props, State> {
 
     render() {
         const { isVisible } = this.state;
-
+        const className = `main-header ${ isVisible ? 'visible' : ''}`;
         return (
-            <div className="main-header" style={ isVisible ? style : {}}>
+            <div className={className}>
                 <Link to={'/'} className="main-logo" />
                 <div className="navigation-bar">
                     <Link exact to={'/'} className="link" activeClassName="selected">ALL PRODUCTS</Link>
