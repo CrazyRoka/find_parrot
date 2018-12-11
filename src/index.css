@@ -9,3 +9,7 @@ body {
 *, *:before, *:after {
     box-sizing: border-box;
 }
+
+.overflow-hide {
+    overflow: hidden;
+}

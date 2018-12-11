@@ -6,19 +6,12 @@ import { ABOUT_URL, SIGN_URL } from '../../constants';
 export interface State {
     isVisible: boolean;
     isFixed: boolean;
+    isActivated: boolean;
 }
 
 export interface Props {
     isFixed: boolean;
 }
-
-const style = {
-    boxShadow: '0 0 6px rgba(0,0,2,0.16)',
-    background: '#f7f7f7',
-    paddingTop: '5px',
-    paddingBottom: '5px',
-    height: '90px'
-};
 
 class Header extends React.PureComponent<Props, State> {
     static defaultProps = {
@@ -31,15 +24,26 @@ class Header extends React.PureComponent<Props, State> {
         const { isFixed } = props;
         this.state = {
             isVisible: isFixed || window.scrollY !== 0,
-            isFixed
+            isFixed,
+            isActivated: false
         };
     }
 
     handleScroll = () => {
-        const { isVisible } = this.state;
+        const { isVisible, isActivated } = this.state;
         let scrollTop = window.scrollY;
         if(scrollTop !== 0 && !isVisible)this.setState({ isVisible: true });
         if(scrollTop === 0 && isVisible)this.setState({ isVisible: false });
+    }
+
+    menuClick = () => {
+        const { isActivated } = this.state;
+        console.log("prev value", isActivated)
+        this.setState({ isActivated: !isActivated });
+        console.log("next value", isActivated)
+        isActivated
+        ? document.body.classList.remove('overflow-hide')
+        : document.body.classList.add('overflow-hide');
     }
 
     componentDidMount() {
@@ -53,19 +57,30 @@ class Header extends React.PureComponent<Props, State> {
     }
 
     render() {
-        const { isVisible } = this.state;
-        const className = `main-header ${ isVisible ? 'visible' : ''}`;
+        const { isVisible, isActivated } = this.state;
+        const mainHeaderClassName = `main-header ${ isVisible ? 'visible' : ''}`;
+        const mobileNavbarClassName = `mobile-navbar ${ isActivated ? 'activated' : '' }`;
         return (
-            <div className={className}>
-                <Link to={'/'} className="main-logo" />
-                <div className="navigation-bar">
+            <React.Fragment>
+                <div className={mainHeaderClassName}>
+                    <Link to={'/'} className="main-logo" />
+                    <div className="navigation-bar">
+                        <Link exact to={'/'} className="link" activeClassName="selected">ALL PRODUCTS</Link>
+                        <Link to={ABOUT_URL} className="link" activeClassName="selected">ABOUT US</Link>
+                        <Link to={SIGN_URL} className="link">LOG IN</Link>
+                        <div className="shape" />
+                        <Link to={SIGN_URL} className="link">SIGN UP</Link>
+                    </div>
+                    <div className="menu-logo" onClick={this.menuClick} />
+                </div>
+                <div className={mobileNavbarClassName}>
                     <Link exact to={'/'} className="link" activeClassName="selected">ALL PRODUCTS</Link>
                     <Link to={ABOUT_URL} className="link" activeClassName="selected">ABOUT US</Link>
                     <Link to={SIGN_URL} className="link">LOG IN</Link>
                     <div className="shape" />
                     <Link to={SIGN_URL} className="link">SIGN UP</Link>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
