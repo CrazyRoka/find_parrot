@@ -4,7 +4,7 @@ import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import Field from '../../../../components/Field';
 import SubmitButton from '../../../../components/SubmitButton';
-import SignUpForm from '../../../../components/SignUp';
+import SignUpContainer from '../../../../containers/components/SignUpContainer';
 
 const SignInSignUp = () =>
     <div className="sign-page">
@@ -19,7 +19,7 @@ const SignInSignUp = () =>
                 </form>
             </div>
             <div className="sign-up-container">
-                <SignUpForm />
+                <SignUpContainer />
             </div>
         </div>
         <Footer />

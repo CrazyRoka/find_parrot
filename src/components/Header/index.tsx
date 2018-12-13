@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { NavLink as Link } from 'react-router-dom';
 import './index.scss';
 import { ABOUT_URL, SIGN_URL } from '../../constants';
@@ -38,12 +39,9 @@ class Header extends React.PureComponent<Props, State> {
 
     menuClick = () => {
         const { isActivated } = this.state;
-        console.log("prev value", isActivated)
         this.setState({ isActivated: !isActivated });
-        console.log("next value", isActivated)
-        isActivated
-        ? document.body.classList.remove('overflow-hide')
-        : document.body.classList.add('overflow-hide');
+        if(isActivated)document.body.classList.remove('overflow-hide');
+        else document.body.classList.add('overflow-hide');
     }
 
     componentDidMount() {
@@ -58,8 +56,8 @@ class Header extends React.PureComponent<Props, State> {
 
     render() {
         const { isVisible, isActivated } = this.state;
-        const mainHeaderClassName = `main-header ${ isVisible ? 'visible' : ''}`;
-        const mobileNavbarClassName = `mobile-navbar ${ isActivated ? 'activated' : '' }`;
+        const mainHeaderClassName = classNames('main-header', { visible: isVisible });
+        const mobileNavbarClassName = classNames('mobile-navbar', {activated: isActivated });
         return (
             <React.Fragment>
                 <div className={mainHeaderClassName}>

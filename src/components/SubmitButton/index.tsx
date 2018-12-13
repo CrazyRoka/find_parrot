@@ -3,15 +3,13 @@ import './index.scss';
 import arrow from '../../assets/images/arrow.png';
 
 export interface Props {
-    text?: string;
+    children?: any;
+    onClick?: Function;
 }
 
-const SubmitButton = ({ text } : Props) =>
-    <button className="submit">
-        { text ? 
-            text :
-            <img src={arrow}/>
-        }
+const SubmitButton = ({ children = <img src={arrow} />, onClick = () => {} } : Props) =>
+    <button className="submit" onClick={event => onClick(event)}>
+        { children }
     </button>
 
 

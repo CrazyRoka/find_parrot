@@ -4,6 +4,7 @@ import './index.scss';
 export interface Props {
     type?: string;
     placeholder?: string;
+    ref?: any;
 }
 
 const Field = ({ type = 'text', placeholder } : Props) =>
