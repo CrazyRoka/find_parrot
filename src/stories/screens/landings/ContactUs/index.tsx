@@ -1,14 +1,14 @@
 import * as React from 'react';
 import './index.scss';
-import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import phone from '../../../../assets/images/phone.png';
 import SubmitButton from '../../../../components/SubmitButton';
 import Field from '../../../../components/Field';
+import HeaderContainer from '../../../../containers/components/HeaderContainer';
 
 const ContactUs = () =>
     <div className="contact-us">
-        <Header />
+        <HeaderContainer />
         <div className="contact-section">
             <div className="contact-container">
                 <div className="title">CONTACT US FOR HELP</div>

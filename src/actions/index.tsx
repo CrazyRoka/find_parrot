@@ -54,7 +54,7 @@ export function logOut() : LogOut {
     }
 }
 
-export function logIn(email: string, password: string) : Function {
+export function logIn(email: string, password: string) {
     return function(dispatch: Dispatch) {
         fetch(constants.API_URL + 'user_token', {
             method: 'POST',
@@ -62,7 +62,7 @@ export function logIn(email: string, password: string) : Function {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ user: { email, password } })
+            body: JSON.stringify({ auth: { email, password } })
         })
         .then(responce => {
             if(responce.ok)return responce.json();

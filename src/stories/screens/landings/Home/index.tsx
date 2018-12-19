@@ -3,12 +3,12 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 import clickCategory from '../../../../assets/images/clickCategory.png';
 import clickHand from '../../../../assets/images/clickHand.png';
-import Header from '../../../../components/Header';
 import SearchForm from '../../../../components/SearchForm';
 import ProductContainer from '../../../../components/ProductContainer';
 import Footer from '../../../../components/Footer';
 import { Product } from '../../../../dataTypes';
 import { ClipLoader } from 'react-spinners';
+import HeaderContainer from '../../../../containers/components/HeaderContainer';
 
 export interface Props {
     products?: Array<Product>;
@@ -16,7 +16,7 @@ export interface Props {
 
 const Home = ({ products } : Props) => 
     <div className="home">
-        <Header />
+        <HeaderContainer />
         <div className="top-section">
             <div className="home-slider">
                 <div className="big-title">

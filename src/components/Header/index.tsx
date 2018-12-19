@@ -6,17 +6,20 @@ import { ABOUT_URL, SIGN_URL } from '../../constants';
 
 export interface State {
     isVisible: boolean;
-    isFixed: boolean;
     isActivated: boolean;
 }
 
 export interface Props {
     isFixed: boolean;
+    logged: boolean;
+    email: string;
 }
 
 class Header extends React.PureComponent<Props, State> {
     static defaultProps = {
-        isFixed: false
+        isFixed: false,
+        logged: false,
+        email: ''
     };
 
     constructor( props : Props) {
@@ -25,7 +28,6 @@ class Header extends React.PureComponent<Props, State> {
         const { isFixed } = props;
         this.state = {
             isVisible: isFixed || window.scrollY !== 0,
-            isFixed,
             isActivated: false
         };
     }
@@ -45,17 +47,18 @@ class Header extends React.PureComponent<Props, State> {
     }
 
     componentDidMount() {
-        if(!this.state.isFixed)
+        if(!this.props.isFixed)
             window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
-        if(!this.state.isFixed)
+        if(!this.props.isFixed)
             window.removeEventListener('scroll', this.handleScroll);
     }
 
     render() {
         const { isVisible, isActivated } = this.state;
+        const { logged, email } = this.props;
         const mainHeaderClassName = classNames('main-header', { visible: isVisible });
         const mobileNavbarClassName = classNames('mobile-navbar', {activated: isActivated });
         return (
@@ -65,9 +68,13 @@ class Header extends React.PureComponent<Props, State> {
                     <div className="navigation-bar">
                         <Link exact to={'/'} className="link" activeClassName="selected">ALL PRODUCTS</Link>
                         <Link to={ABOUT_URL} className="link" activeClassName="selected">ABOUT US</Link>
-                        <Link to={SIGN_URL} className="link">LOG IN</Link>
-                        <div className="shape" />
-                        <Link to={SIGN_URL} className="link">SIGN UP</Link>
+                        { logged ? <div className="header-email">Hi, {email}</div> :
+                            <React.Fragment>
+                                <Link to={SIGN_URL} className="link">LOG IN</Link>
+                                <div className="shape" />
+                                <Link to={SIGN_URL} className="link">SIGN UP</Link>
+                            </React.Fragment>
+                        }
                     </div>
                     <div className="menu-logo" onClick={this.menuClick} />
                 </div>

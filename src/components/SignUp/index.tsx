@@ -19,18 +19,14 @@ function validateEmail(email : string) {
 }
 
 class SignUpForm extends React.PureComponent<Props, State> {
-    constructor(props : any) {
-        super(props);
-
-        this.state = {
-            emailRef: React.createRef(),
-            passwordRef: React.createRef(),
-            confirmPasswordRef: React.createRef()
-        };
+    state: State = {
+        emailRef: React.createRef(),
+        passwordRef: React.createRef(),
+        confirmPasswordRef: React.createRef()
     }
     
 
-    sign_up = (event : Event) => {
+    sign_up = (event: Event) => {
         event.preventDefault();
         const { emailRef, passwordRef, confirmPasswordRef } = this.state;
         const { requestSignUp } = this.props;

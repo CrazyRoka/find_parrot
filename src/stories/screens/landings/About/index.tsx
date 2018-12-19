@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import './index.scss';
+import HeaderContainer from '../../../../containers/components/HeaderContainer';
 
 const About = () =>
     <div className="about">
-        <Header isFixed={true} />
+        <HeaderContainer isFixed={true} />
         <div className="about-section">
             <div className="image-effect"/>
             <div className="about-text">
